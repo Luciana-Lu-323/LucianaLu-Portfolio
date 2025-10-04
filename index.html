@@ -4,155 +4,178 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luciana Lu — Coding with Empathy</title>
-  <meta name="description" content="Luciana Lu — STEM x Social Impact portfolio. Technology should have a heart." />
+  <meta name="description" content="Luciana Lu — STEM x Social Impact portfolio." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <!-- 顶部導覽 -->
+
+  <!-- Sticky Nav -->
   <header class="nav">
-    <a href="#" class="brand">Luciana&nbsp;Lu</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#impact">Impact</a>
-      <a href="#media">Media</a>
-      <a href="#contact" class="btn">Contact</a>
-    </nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#">Luciana&nbsp;Lu</a>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#story">Story</a>
+        <a href="#media">Media</a>
+        <a href="#contact" class="btn btn-dark">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- 首屏 Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
+    <div class="container hero-grid">
+      <div class="hero-copy">
         <h1>Technology should have a <span>heart</span>.</h1>
-        <p>I’m Luciana Lu, a U.S.–Taiwan student using science, coding, and empathy to create meaningful innovations.</p>
+        <p class="lead">
+          I’m <b>Luciana Lu</b>, a U.S.–Taiwan student using science and code to solve human problems —
+          from disaster-relief tools to anti-bullying storytelling.
+        </p>
         <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn ghost" href="#about">About Me</a>
+          <a class="btn btn-dark" href="#projects">See Projects</a>
+          <a class="btn btn-ghost" href="#story">About Me</a>
         </div>
       </div>
-      <div class="hero-img">
-        <!-- 換成你的照片：assets/profile.jpg -->
-        <img src="assets/profile.jpg" alt="Luciana Lu" />
+      <div class="hero-visual">
+        <!-- 換成你的主視覺：1920x1280 -->
+        <img src="assets/hero.jpg" alt="Luciana working on STEM projects" />
       </div>
     </div>
   </section>
 
-  <!-- 關於我 -->
-  <section id="about" class="section">
-    <div class="container two-col">
-      <div>
-        <h2>About Me</h2>
+  <!-- Value Props / “Why” 條列（FIGS 常見三欄） -->
+  <section class="value">
+    <div class="container value-grid">
+      <div class="value-item">
+        <h3>STEM + Empathy</h3>
+        <p>Human-centered projects where code meets care.</p>
+      </div>
+      <div class="value-item">
+        <h3>Builds Fast</h3>
+        <p>From idea → demo → iteration — rapid learning loops.</p>
+      </div>
+      <div class="value-item">
+        <h3>Real Impact</h3>
+        <p>Tools for disaster response and student wellbeing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid（FIGS 卡片格線） -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <a class="link" href="https://github.com/Luciana-Lu-323/LucianaLu-Portfolio" target="_blank">View on GitHub →</a>
+      </div>
+
+      <div class="cards">
+        <a class="card" href="./Volunteer-Map/" target="_blank">
+          <div class="card-img ratio-4x3" style="background-image:url('assets/map.jpg');"></div>
+          <div class="card-body">
+            <h4>Disaster Relief Volunteer Map</h4>
+            <p>Leaflet + JSON → match volunteers and needs in Taiwan after earthquakes/landslides.</p>
+          </div>
+        </a>
+
+        <a class="card" href="./Robotics-Project/" target="_blank">
+          <div class="card-img ratio-4x3" style="background-image:url('assets/robot.jpg');"></div>
+          <div class="card-body">
+            <h4>Smart Bin Sensor</h4>
+            <p>Arduino + ultrasonic sensor detects full bins and alerts staff efficiently.</p>
+          </div>
+        </a>
+
+        <a class="card" href="./Covid-Icosahedron/" target="_blank">
+          <div class="card-img ratio-4x3" style="background-image:url('assets/icosa.jpg');"></div>
+          <div class="card-body">
+            <h4>COVID-19 Icosahedron Model</h4>
+            <p>Why viruses look spherical: exploring geometry and natural stability.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story / About（大頭像、兩欄文字） -->
+  <section id="story" class="section section-alt">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="assets/luciana.jpg" alt="Luciana Lu portrait" />
+      </div>
+      <div class="about-copy">
+        <h2>My Story</h2>
         <p>
-          I’m a fast, independent learner who blends STEM with storytelling.
-          Professors from D-IT programs recognized me as a gifted learner in Python and robotics.
-          I build projects that help real people—because technology matters most when it serves others.
+          I learn fast and build independently. Professors from D-IT programs called me a gifted learner in Python and robotics.
+          I founded <em>Unbroken Voices</em> to amplify students’ stories after experiencing bullying — turning pain into action.
         </p>
         <ul class="bullets">
-          <li>Dual citizenship: United States & Taiwan</li>
+          <li>Dual citizenship: U.S. & Taiwan</li>
           <li>Bilingual: English & Mandarin</li>
-          <li>Focus: Python, Robotics, Human-centered design</li>
-        </ul>
-      </div>
-      <div class="card highlight">
-        <h3>Recent Highlights</h3>
-        <ul>
-          <li>National Teaching Aids Exhibition — Merit Award (youngest awardee)</li>
-          <li>D-IT Summer Programs — praised for fast learning and creativity</li>
-          <li>Founded <em>Unbroken Voices</em> — an anti-bullying interview project</li>
+          <li>Focus: Python · Robotics · Human-centered design</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 專案 -->
-  <section id="projects" class="section alt">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid">
-        <a class="project" href="./Covid-Icosahedron/" target="_blank">
-          <div class="project-tag">Science</div>
-          <h3>COVID-19 Icosahedron Model</h3>
-          <p>A curiosity-driven 3D model exploring why viruses approximate spheres via icosahedra.</p>
-          <span class="more">Open →</span>
-        </a>
-        <a class="project" href="./Volunteer-Map/" target="_blank">
-          <div class="project-tag">Web · Python</div>
-          <h3>Disaster Relief Volunteer Map</h3>
-          <p>Leaflet + JSON map connecting volunteers and communities after earthquakes/landslides in Taiwan.</p>
-          <span class="more">Open →</span>
-        </a>
-        <a class="project" href="./Robotics-Project/" target="_blank">
-          <div class="project-tag">Robotics</div>
-          <h3>Smart Bin Sensor</h3>
-          <p>Arduino + ultrasonic sensor to detect full bins and alert staff with light/buzzer.</p>
-          <span class="more">Open →</span>
-        </a>
+  <!-- Media/Awards 條帶（FIGS 常見橫條） -->
+  <section id="media" class="section strip">
+    <div class="container strip-grid">
+      <div class="kpi">
+        <h3>National Teaching Aids</h3>
+        <p>Merit Award (youngest)</p>
+      </div>
+      <div class="kpi">
+        <h3>Taoyuan Tech</h3>
+        <p>3rd Place</p>
+      </div>
+      <div class="kpi">
+        <h3>D-IT Programs</h3>
+        <p>Praised as gifted</p>
       </div>
     </div>
   </section>
 
-  <!-- 影響力 -->
-  <section id="impact" class="section">
-    <div class="container two-col">
+  <!-- CTA -->
+  <section class="section">
+    <div class="container cta-band">
+      <h2>Let’s build useful things for people.</h2>
+      <a class="btn btn-dark" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-alt">
+    <div class="container contact">
       <div>
-        <h2>Unbroken Voices — Anti-Bullying</h2>
-        <p>
-          I turn my experience into action by producing short interviews that amplify students’ voices.
-          Next: on-camera series with a microphone to reach more peers across schools.
-        </p>
-        <div class="chips">
-          <span>Leadership</span><span>Storytelling</span><span>Empathy</span>
-        </div>
+        <h2>Contact</h2>
+        <p>Collaboration, mentorship or features — I’d love to connect.</p>
       </div>
-      <div class="card">
-        <h3>Call to Action</h3>
-        <p>If you’re interested in collaboration, mentorship, or media features, I’d love to connect.</p>
-        <a class="btn primary" href="#contact">Get in touch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 媒體/獎項 -->
-  <section id="media" class="section alt">
-    <div class="container">
-      <h2>Media & Awards</h2>
-      <div class="tiles">
-        <div class="tile">
-          <h4>National Teaching Aids Exhibition</h4>
-          <p>Merit Award — youngest awardee</p>
-        </div>
-        <div class="tile">
-          <h4>Taoyuan Technology Competition</h4>
-          <p>3rd Place — Life Tech Category</p>
-        </div>
-        <div class="tile">
-          <h4>D-IT Programs (NTHU & NCU)</h4>
-          <p>Praised as a gifted learner in Python & robotics</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 聯絡 -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>For speaking, collaboration, or program inquiries:</p>
-      <div class="contact">
-        <a class="btn primary" href="mailto:lunasci323@gmail.com">Email me</a>
-        <a class="btn ghost" href="https://github.com/Luciana-Lu-323" target="_blank">GitHub</a>
+      <div class="contact-buttons">
+        <a class="btn btn-dark" href="mailto:lunasci323@gmail.com">Email me</a>
+        <a class="btn btn-ghost" target="_blank" href="https://github.com/Luciana-Lu-323">GitHub</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container tiny">
-      <p>© 2025 Luciana Lu. Built on GitHub Pages.</p>
+    <div class="container foot-grid">
+      <div>
+        <div class="brand">Luciana&nbsp;Lu</div>
+        <p class="muted">STEM × Social Impact — Technology with heart.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#projects">Projects</a>
+        <a href="#story">Story</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="container legal">
+      © 2025 Luciana Lu. Built on GitHub Pages.
     </div>
   </footer>
 
   <script src="assets/main.js"></script>
 </body>
 </html>
-
