@@ -8,29 +8,11 @@ I believe **technology should have a heart** — every project I build comes fro
 
 ## 🧬 STEM Projects
 
-### 1. [COVID-19 Icosahedron Model](#)
-When I was in elementary school, I saw the image of the coronavirus on TV and wondered:  
-“Why is it shaped like a sphere?”  
-That curiosity led me to discover the **icosahedron**, the geometric shape closest to a sphere.  
-I built my own 3D model and presented it at the **National Teaching Aids Exhibition**, winning the *National Merit Award* as the youngest participant.
-
----
-
-### 2. [Python x Disaster Relief Volunteer Map](#)
-After seeing the landslide disaster in Hualien, I imagined how coding could connect volunteers and people in need.  
-I built a simple **web map** using *Python + Leaflet + JSON*, showing:
-- 🔴 Areas that need help  
-- 🟢 Volunteer stations  
-
-> Purpose: To make information travel faster than disaster.
-
-View demo → [github.io link coming soon]
-
----
-
-### 3. [Arduino / Robotics Lab Project](#)
-In school’s robotics class, I designed a prototype that detects when trash bins are full and alerts the cleaning staff with a light signal.  
-Our department head said I learned “unusually fast” and kept experimenting beyond the syllabus.
+| Project | Description |
+|----------|-------------|
+| [🧬 COVID-19 Icosahedron Model](./Covid-Icosahedron) | A 3D virus model inspired by COVID-19, exploring geometry and curiosity-driven science. |
+| [🌍 Python x Disaster Relief Volunteer Map](./Volunteer-Map) | A web map connecting volunteers and people in need after disasters in Taiwan. |
+| [🤖 Arduino / Robotics Lab Project](./Robotics-Project) | A smart sensor system detecting full trash bins and helping cleaning staff efficiently. |
 
 ---
 
