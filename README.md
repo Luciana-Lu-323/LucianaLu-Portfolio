@@ -1,5 +1,5 @@
-# Luna-Portfolio
-# 🌍 Luna Lu — Coding with Empathy
+# Luciana Lu – Portfolio
+# ✨ Luciana Lu — Coding with Empathy
 
 Hi! I’m **Luna Lu**, a U.S.–Taiwan student passionate about using science, coding, and empathy to make life better for others.  
 I believe **technology should have a heart** — every project I build comes from curiosity and care.
