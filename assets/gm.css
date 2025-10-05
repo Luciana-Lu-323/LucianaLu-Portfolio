@@ -1,28 +1,91 @@
-/* ===== Gentle Monster inspired blocks ===== */
+/* gm.css – Gentle Monster-inspired minimalist portfolio theme */
 
-/* HERO（全幅主視覺） */
-.gm-hero{position:relative;min-height:72vh}
-.gm-hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
-.gm-hero-copy{position:relative;z-index:1;color:#111;padding:12vh 6%}
-.gm-hero h1{font-size:clamp(40px,8vw,96px);line-height:.95;font-weight:800;letter-spacing:-.02em;margin:0 0 10px}
-.gm-hero em{font-style:normal;border-bottom:.12em solid #111}
-.gm-hero p{margin:0;font-size:18px;color:#6b7280}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
 
-/* LOOKBOOK（不等高拼貼）*/
-.gm-lookbook{padding:48px 4%}
-.lb-grid{column-count:3;column-gap:16px}
-.lb-grid img{width:100%;margin:0 0 16px;display:block;break-inside:avoid;border-radius:14px}
-@media (max-width:980px){.lb-grid{column-count:2}}
-@media (max-width:600px){.lb-grid{column-count:1}}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
 
-/* Projects 區塊標題＋卡片微調（沿用你現有卡片） */
-.gm-section-head{display:flex;align-items:end;justify-content:space-between;padding:0 6% 12px}
-.gm-section-head h2{font-size:clamp(28px,4vw,48px);margin:0}
-.filters{display:flex;gap:10px}
-.filters button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer}
-.filters .is-active{background:#111;color:#fff;border-color:#111}
+header .brand {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-/* 滾動淡入（等會配合 JS） */
-.reveal{opacity:0;transform:translateY(12px);transition:.5s}
-.reveal.in{opacity:1;transform:none}
+nav a {
+  color: #000;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
 
+nav a:hover {
+  opacity: 0.6;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.1em;
+  color: #444;
+  margin-top: 10px;
+}
+
+.section {
+  padding: 120px 80px;
+}
+
+.section-title {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.project {
+  border: 1px solid #eee;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  background-color: #fafafa;
+  transform: translateY(-5px);
+}
