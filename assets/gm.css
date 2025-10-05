@@ -1,1 +1,28 @@
+/* ===== Gentle Monster inspired blocks ===== */
+
+/* HERO（全幅主視覺） */
+.gm-hero{position:relative;min-height:72vh}
+.gm-hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+.gm-hero-copy{position:relative;z-index:1;color:#111;padding:12vh 6%}
+.gm-hero h1{font-size:clamp(40px,8vw,96px);line-height:.95;font-weight:800;letter-spacing:-.02em;margin:0 0 10px}
+.gm-hero em{font-style:normal;border-bottom:.12em solid #111}
+.gm-hero p{margin:0;font-size:18px;color:#6b7280}
+
+/* LOOKBOOK（不等高拼貼）*/
+.gm-lookbook{padding:48px 4%}
+.lb-grid{column-count:3;column-gap:16px}
+.lb-grid img{width:100%;margin:0 0 16px;display:block;break-inside:avoid;border-radius:14px}
+@media (max-width:980px){.lb-grid{column-count:2}}
+@media (max-width:600px){.lb-grid{column-count:1}}
+
+/* Projects 區塊標題＋卡片微調（沿用你現有卡片） */
+.gm-section-head{display:flex;align-items:end;justify-content:space-between;padding:0 6% 12px}
+.gm-section-head h2{font-size:clamp(28px,4vw,48px);margin:0}
+.filters{display:flex;gap:10px}
+.filters button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer}
+.filters .is-active{background:#111;color:#fff;border-color:#111}
+
+/* 滾動淡入（等會配合 JS） */
+.reveal{opacity:0;transform:translateY(12px);transition:.5s}
+.reveal.in{opacity:1;transform:none}
 
