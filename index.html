@@ -63,40 +63,76 @@
   </section>
 
   <!-- Projects Grid（FIGS 卡片格線） -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Projects</h2>
-        <a class="link" href="https://github.com/Luciana-Lu-323/LucianaLu-Portfolio" target="_blank">View on GitHub →</a>
-      </div>
+<section id="projects" class="section projects">
 
-      <div class="cards">
-        <a class="card" href="./Volunteer-Map/" target="_blank">
-          <div class="card-img ratio-4x3" style="background-image:url('assets/map.jpg');"></div>
-          <div class="card-body">
-            <h4>Disaster Relief Volunteer Map</h4>
-            <p>Leaflet + JSON → match volunteers and needs in Taiwan after earthquakes/landslides.</p>
-          </div>
-        </a>
+  <!-- A. 年份快速導航（最近 → 過去） -->
+  <nav class="years-nav" aria-label="Projects by year">
+    <button class="year-btn is-active" data-year="2025">2025</button>
+    <button class="year-btn" data-year="2024">2024</button>
+    <button class="year-btn" data-year="2023">2023</button>
+    <button class="year-btn" data-year="2020">2020</button> <!-- 四年級教具展 -->
+  </nav>
 
-        <a class="card" href="./Robotics-Project/" target="_blank">
-          <div class="card-img ratio-4x3" style="background-image:url('assets/robot.jpg');"></div>
-          <div class="card-body">
-            <h4>Smart Bin Sensor</h4>
-            <p>Arduino + ultrasonic sensor detects full bins and alerts staff efficiently.</p>
-          </div>
+  <!-- B. 年度內容（每個年度一個 section） -->
+  <!-- 2025 -->
+  <section class="year-section" id="y-2025" data-year="2025">
+    <h2 class="year-title">2025</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <a class="project-link" href="./Volunteer-Map/">
+          <span class="p-name">Python × Disaster Relief Volunteer Map</span>
+          <span class="p-meta">Web · Social Impact</span>
         </a>
-
-        <a class="card" href="./Covid-Icosahedron/" target="_blank">
-          <div class="card-img ratio-4x3" style="background-image:url('assets/icosa.jpg');"></div>
-          <div class="card-body">
-            <h4>COVID-19 Icosahedron Model</h4>
-            <p>Why viruses look spherical: exploring geometry and natural stability.</p>
-          </div>
+      </li>
+      <li class="project-item">
+        <a class="project-link" href="./Robotics-Project/">
+          <span class="p-name">Arduino Smart Bin Sensor</span>
+          <span class="p-meta">Robotics · IoT</span>
         </a>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
+
+  <!-- 2024 -->
+  <section class="year-section is-hidden" id="y-2024" data-year="2024">
+    <h2 class="year-title">2024</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <a class="project-link" href="#">
+          <span class="p-name">Unbroken Voices（反霸凌短訪）</span>
+          <span class="p-meta">Media · Advocacy</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 2023 -->
+  <section class="year-section is-hidden" id="y-2023" data-year="2023">
+    <h2 class="year-title">2023</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <a class="project-link" href="./Covid-Icosahedron/">
+          <span class="p-name">COVID-19 Icosahedron Model</span>
+          <span class="p-meta">STEM · Geometry</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 2020（四年級教具展）-->
+  <section class="year-section is-hidden" id="y-2020" data-year="2020">
+    <h2 class="year-title">2020 · 四年級教具展</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <a class="project-link" href="#" target="_blank">
+          <span class="p-name">National Teaching Aids — Merit Award（最年輕得獎者）</span>
+          <span class="p-meta">Teaching Aids · Independent project</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</section>
 
   <!-- Story / About（大頭像、兩欄文字） -->
   <section id="story" class="section section-alt">
