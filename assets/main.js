@@ -9,3 +9,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
+// Year tabs: show selected year, hide others
+const yearBtns = document.querySelectorAll('.year-btn');
+const yearSections = document.querySelectorAll('.year-section');
+
+yearBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const y = btn.dataset.year;
+    // 按鈕狀態
+    yearBtns.forEach(b=>b.classList.toggle('is-active', b===btn));
+    // 區塊顯示
+    yearSections.forEach(sec=>{
+      sec.classList.toggle('is-hidden', sec.dataset.year !== y);
+    });
+    // 捲到區塊起點
+    const target = document.getElementById(`y-${y}`);
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
