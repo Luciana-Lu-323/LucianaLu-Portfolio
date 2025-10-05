@@ -116,3 +116,14 @@ body{
   .nav-links{display:none}
 }
 
+.profile-photo {
+  width: 380px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);
+}
