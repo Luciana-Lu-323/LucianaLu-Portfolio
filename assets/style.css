@@ -53,17 +53,18 @@ header.nav nav a:hover {
 
 /* Hero Section */
 .hero {
-  padding: 120px 80px;
-  background: #f7f7f7;
-  text-align: left;
+  background-color: #f8f8f8;
+  padding: 180px 0 140px; /* 上下留更多空間 */
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 54px;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
   color: #111;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  margin-bottom: 40px;
+  max-width: 800px;
 }
 
 .hero p {
