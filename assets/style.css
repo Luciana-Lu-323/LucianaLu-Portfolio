@@ -256,3 +256,36 @@ nav ul li a.active { color: #666; }
   text-decoration: underline;
   font-weight: 500;
 }
+
+/* ===== About (home) ===== */
+.about { padding: 72px 0; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;   /* 左圖右文 */
+  gap: 48px;
+  align-items: center;
+}
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;                /* 柔和一點 */
+}
+.about-copy h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.about-copy p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #444;
+  margin: 0 0 14px;
+}
+.about-copy .bullets { margin: 8px 0 0 18px; }
+.about-copy .bullets li { margin: 4px 0; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .about-copy h2 { font-size: 32px; }
+}
