@@ -5,7 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Luciana Lu</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .about-section {
+      max-width: 900px;
+      margin: 60px auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .about-section img {
+      width: 300px;
+      height: auto;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .about-text h2 {
+      font-size: 2em;
+      margin-bottom: 12px;
+    }
+
+    .about-text p {
+      font-size: 1.05em;
+      line-height: 1.6em;
+      color: #333;
+    }
+  </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="container">
@@ -13,7 +49,7 @@
       <nav>
         <ul>
           <li><a href="projects.html">Projects</a></li>
-          <li><a class="active" href="mystory.html">Story</a></li>
+          <li><a class="active" href="about.html">About</a></li>
           <li><a href="media.html">Media</a></li>
           <li><a href="index.html#contact" class="btn-black">Contact</a></li>
         </ul>
@@ -21,19 +57,14 @@
     </div>
   </header>
 
-  <section class="page-intro">
-    <div class="container-narrow">
-      <h2 class="page-title">About Me</h2>
-      <p class="page-sub">Curiosity × Creativity × Courage</p>
+  <section class="about-section">
+    <img src="assets/images/luciana.jpg" alt="Luciana Lu portrait">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hi, I’m <strong>Luciana Lu</strong> — a student from Taiwan and the U.S. passionate about science, design, and creativity. 
+      I love building projects that combine technology and empathy, from robotics and sustainability to anti-bullying campaigns.</p>
+      <p>My goal is to use design and innovation to solve real-world problems and inspire others to explore STEM with heart and imagination.</p>
     </div>
-  </section>
-
-  <section class="container-narrow" style="padding:24px;">
-    <p>
-      I’ve always loved exploring how things work — from building geometric models to creating
-      interactive science demonstrations. My journey began with curiosity and continues with a desire
-      to make science more visual, creative, and accessible to others.
-    </p>
   </section>
 
   <footer class="footer">
@@ -41,4 +72,3 @@
   </footer>
 </body>
 </html>
-
