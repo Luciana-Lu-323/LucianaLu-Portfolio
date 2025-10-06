@@ -1,243 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luciana Lu — Coding with Empathy</title>
-  <meta name="description" content="Luciana Lu — STEM x Social Impact portfolio." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luciana Lu | Portfolio</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="assets/gm.css" />
 </head>
-<body>
 
-  <!-- Sticky Nav -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">Luciana&nbsp;Lu</a>
-      <nav class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#story">Story</a>
-        <a href="#media">Media</a>
-        <a href="#contact" class="btn btn-dark">Contact</a>
+<body>
+  <!-- ======= Navigation ======= -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">LUCIANA LU</a></h1>
+      <nav>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="#contact" class="btn-black">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ======= Hero Section ======= -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <h1>I’m not afraid to fail <span>— because dreams are worth fighting for.</h1>
-        <p class="lead">
-          I’m <b>Luciana Lu</b>, a U.S.–Taiwan student using science and code to solve human problems —
-          from disaster-relief tools to anti-bullying storytelling.
-        </p>
-        <div class="cta">
-          <a class="btn btn-dark" href="#projects">See Projects</a>
-          <a class="btn btn-ghost" href="#story">About Me</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <!-- 換成你的主視覺：1920x1280 -->
-        <img src="assets/hero.jpg" alt="Luciana working on STEM projects" />
+    <div class="hero-content">
+      <h2>I’m not afraid to fail —<br>because dreams are worth fighting for.</h2>
+      <p>I’m Luciana Lu, a U.S.–Taiwan student passionate about technology, design, and empathy — building tools that make a difference.</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn-black">See Projects</a>
+        <a href="story.html" class="btn-outline">About Me</a>
       </div>
     </div>
   </section>
 
-  <!-- Value Props / “Why” 條列（FIGS 常見三欄） -->
-  <section class="value">
-    <div class="container value-grid">
-      <div class="value-item">
-        <h3>STEM + Empathy</h3>
-        <p>Human-centered projects where code meets care.</p>
-      </div>
-      <div class="value-item">
-        <h3>Builds Fast</h3>
-        <p>From idea → demo → iteration — rapid learning loops.</p>
-      </div>
-      <div class="value-item">
-        <h3>Real Impact</h3>
-        <p>Tools for disaster response and student wellbeing.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Grid（FIGS 卡片格線） -->
-<section id="projects" class="section projects">
-
-  <!-- 年份導覽：由近到遠 -->
-  <nav class="years-nav" aria-label="Projects by year">
-    <button class="year-btn is-active" data-year="2025">2025</button>
-    <button class="year-btn" data-year="2024">2024</button>
-    <button class="year-btn" data-year="2023">2023</button>
-    <button class="year-btn" data-year="2021">2021</button> <!-- 四年級教具展 -->
-  </nav>
-
-  <!-- 2025 -->
-  <section class="year-section" id="y-2025" data-year="2025">
-    <h2 class="year-title">2025</h2>
-    <ul class="project-list">
-      <li class="project-item">
-        <a class="project-link" href="./Volunteer-Map/">
-          <span class="p-name">Python × Disaster Relief Volunteer Map</span>
-          <span class="p-meta">Web · Social Impact</span>
-        </a>
-      </li>
-      <li class="project-item">
-        <a class="project-link" href="./Robotics-Project/">
-          <span class="p-name">Arduino Smart Bin Sensor</span>
-          <span class="p-meta">Robotics · IoT</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- 2024（反霸凌）-->
-  <section class="year-section is-hidden" id="y-2024" data-year="2024">
-    <h2 class="year-title">2024</h2>
-    <ul class="project-list">
-      <li class="project-item">
-        <a class="project-link" href="#" target="_blank">
-          <span class="p-name">Unbroken Voices（反霸凌短訪）</span>
-          <span class="p-meta">Media · Advocacy</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- 2023 -->
-  <section class="year-section is-hidden" id="y-2023" data-year="2023">
-    <h2 class="year-title">2023</h2>
-    <ul class="project-list">
-      <li class="project-item">
-        <a class="project-link" href="./Covid-Icosahedron/">
-          <span class="p-name">COVID-19 Icosahedron Model</span>
-          <span class="p-meta">STEM · Geometry</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- 2021（四年級教具展）-->
-  <section class="year-section is-hidden" id="y-2021" data-year="2021">
-    <h2 class="year-title">2021 · 四年級教具展</h2>
-    <ul class="project-list">
-      <li class="project-item">
-        <a class="project-link" href="#" target="_blank">
-          <span class="p-name">National Teaching Aids — Merit Award（最年輕得獎）</span>
-          <span class="p-meta">Teaching Aids · Independent Project</span>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-</section>
-
-  <!-- Story / About（大頭像、兩欄文字） -->
-  <section id="story" class="section section-alt">
-    <div class="container about-grid">
-      <div class="about-photo">
-        <img src="assets/luciana.jpg" alt="Luciana Lu portrait" class="profile-photo" />
-      </div>
-      <div class="about-copy">
-        <h2>My Story</h2>
-        <p>
-          I learn fast and build independently. Professors from D-IT programs called me a gifted learner in Python and robotics.
-          I founded <em>Unbroken Voices</em> to amplify students’ stories after experiencing bullying — turning pain into action.
-        </p>
-        <ul class="bullets">
-          <li>Dual citizenship: U.S. & Taiwan</li>
-          <li>Bilingual: English & Mandarin</li>
-          <li>Focus: Python · Robotics · Human-centered design</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Media/Awards 條帶（FIGS 常見橫條） -->
-  <section id="media" class="section strip">
-    <div class="container strip-grid">
-      <div class="kpi">
-        <h3>National Teaching Aids</h3>
-        <p>Merit Award (youngest)</p>
-      </div>
-      <div class="kpi">
-        <h3>Taoyuan Tech</h3>
-        <p>3rd Place</p>
-      </div>
-      <div class="kpi">
-        <h3>D-IT Programs</h3>
-        <p>Praised as gifted</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section">
-    <div class="container cta-band">
-      <h2>Let’s build useful things for people.</h2>
-      <a class="btn btn-dark" href="#contact">Get in touch</a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section section-alt">
-    <div class="container contact">
-      <div>
-        <h2>Contact</h2>
-        <p>Collaboration, mentorship or features — I’d love to connect.</p>
-      </div>
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h3>Collaboration, mentorship or features — I’d love to connect.</h3>
       <div class="contact-buttons">
-        <a class="btn btn-dark" href="mailto:lunasci323@gmail.com">Email me</a>
-        <a class="btn btn-ghost" target="_blank" href="https://github.com/Luciana-Lu-323">GitHub</a>
+        <a href="mailto:your-email@example.com" class="btn-black">Email me</a>
+        <a href="https://github.com/Luciana-Lu-323" target="_blank" class="btn-black">GitHub</a>
       </div>
     </div>
   </section>
 
+  <!-- ======= Footer ======= -->
   <footer class="footer">
-    <div class="container foot-grid">
-      <div>
-        <div class="brand">Luciana&nbsp;Lu</div>
-        <p class="muted">STEM × Social Impact — Technology with heart.</p>
-      </div>
-      <div class="foot-links">
-        <a href="#projects">Projects</a>
-        <a href="#story">Story</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-    <div class="container legal">
-      © 2025 Luciana Lu. Built on GitHub Pages.
-    </div>
+    <p>© 2025 Luciana Lu. Built on GitHub Pages.</p>
   </footer>
-
-  <script src="assets/main.js"></script>
 </body>
 </html>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luciana Lu — Portfolio</title>
-
-  <!-- （如果你還有其它 CSS，像 reset 或第三方，就放在這上面）
-       請刪除或註解掉 gm.css；若暫時不想刪，至少把它放在前面 -->
-  <!-- <link rel="stylesheet" href="assets/gm.css"> -->
-
-  <!-- 你的主樣式，**一定要最後**，並加版本防止快取 -->
-  <link rel="stylesheet" href="assets/style.css?v=3" />
-</head>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luciana Lu — Portfolio</title>
-
-  <!-- （如果你還有其它 CSS，像 reset 或第三方，就放在這上面）
-       請刪除或註解掉 gm.css；若暫時不想刪，至少把它放在前面 -->
-  <!-- <link rel="stylesheet" href="assets/gm.css"> -->
-
-  <!-- 你的主樣式，**一定要最後**，並加版本防止快取 -->
-  <link rel="stylesheet" href="assets/style.css?v=3" />
-</head>
