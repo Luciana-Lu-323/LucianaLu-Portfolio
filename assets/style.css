@@ -1,320 +1,350 @@
-/* ---------------------------
-Luciana Lu Portfolio — FIGS Style
-----------------------------*/
+/* =========================================================
+   Luciana Lu — Portfolio Styles
+   Brand vibe: clean, modern, high-end (FIGS / Gentle Monster)
+   Last update: 2025-10-06
+   ========================================================= */
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ---- Fonts (Google Fonts) ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600&display=swap');
+
+/* ---- CSS Variables ---- */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --soft: #8d8d8d;
+  --line: #eaeaea;
+  --panel: #f8f8f8;
+  --accent: #111111; /* 保持黑色品牌感 */
 }
 
-body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #111;
+/* ---- Reset / Base ---- */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family: "Inter","Helvetica Neue",Arial,sans-serif;
+  color: var(--text);
+  background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img{ max-width:100%; display:block; }
+ul{ margin:0; padding-left: 1.2rem; }
+p{ margin:0 0 1rem; }
+
+/* ---- Links: 黑色、不變藍 ---- */
+a, a:visited{
+  color: var(--text);
+  text-decoration: none;
+}
+a:hover{
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-/* Header / Navigation */
-header.nav {
-  width: 100%;
-  background: #fff;
-  padding: 24px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ---- Containers / Sections ---- */
+.container{
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.section{
+  padding: 96px 0;
+}
+.section-alt{
+  padding: 120px 0;
+  background: var(--panel);
+}
+
+/* ---- Top Nav ---- */
+header.nav{
   position: sticky;
   top: 0;
-  z-index: 999;
-  border-bottom: 1px solid #eee;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
-
-header.nav .logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  color: #111;
+nav{
+  height: 72px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 24px;
 }
-
-header.nav nav a {
-  margin-left: 32px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  transition: color 0.3s ease;
+a.logo{
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
-
-header.nav nav a:hover {
-  color: #999;
+.nav-links{
+  display:flex;
+  gap: 28px;
 }
-
-/* Hero Section */
-.hero {
-  background-color: #f8f8f8;
-  padding: 180px 0 140px; /* 上下留更多空間 */
-}
-
-.hero h1 {
-  font-size: 54px;
-  font-weight: 700;
-  color: #111;
-  line-height: 1.35;
-  letter-spacing: -0.3px;
-  margin-bottom: 40px;
-  max-width: 800px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  color: #444;
-}
-
-/* Buttons */
-button, .btn {
-  background: #111;
-  color: #fff;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 999px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-button:hover, .btn:hover {
-  background: #333;
-}
-
-/* Project Section */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  padding: 80px;
-}
-
-.project-card {
-  background: #fff;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.project-card h3 {
-  font-size: 1.4rem;
+.nav-links a{
   font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.project-card p {
-  color: #555;
-}
-
-/* Year Titles */
-.year {
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 40px 80px 10px;
-  color: #111;
-}
-
-/* About / Story Section */
-.about-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 100px 80px;
-}
-
-.about-photo img {
-  width: 360px;
-  border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.about-copy {
-  max-width: 500px;
-}
-
-.about-copy h2 {
-  font-size: 2rem;
-  margin-bottom: 16px;
-}
-
-.about-copy p {
-  color: #555;
-  font-size: 1.1rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 40px;
-  background: #fff;
-  color: #666;
-  font-size: 0.9rem;
-  border-top: 1px solid #eee;
-}
-
-footer a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 8px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Luciana Lu</title>
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <!-- 顶部導覽 -->
-  <header class="nav">
-    <a class="logo" href="index.html">LUCIANA LU</a>
-    <nav>
-      <a href="projects.html">Projects</a>
-      <a href="story.html">Story</a>
-      <a href="media.html">Media</a>
-    </nav>
-  </header>
-
-  <!-- 年份選單（最近 → 過去） -->
-  <nav class="years-nav" aria-label="Projects by year">
-    <button class="year-btn is-active" data-year="2025">2025</button>
-    <button class="year-btn" data-year="2024">2024</button>
-    <button class="year-btn" data-year="2023">2023</button>
-    <button class="year-btn" data-year="2021">2021</button>
-  </nav>
-
-  <!-- 內容：每個年份一個區塊；卡片可持續增加 -->
-  <!-- 2025 -->
-  <section class="year-section" id="y-2025" data-year="2025">
-    <h2 class="year">2025</h2>
-    <div class="projects">
-      <a class="project-card" href="projects/2025-disaster-map.html">
-        <h3>Python × Disaster Relief Volunteer Map</h3>
-        <p>Web · Social Impact · Leaflet + JSON</p>
-      </a>
-
-      <a class="project-card" href="projects/2025-smart-bin.html">
-        <h3>Arduino Smart Bin Sensor</h3>
-        <p>Robotics · IoT · Ultrasonic + Microcontroller</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- 2024 -->
-  <section class="year-section is-hidden" id="y-2024" data-year="2024">
-    <h2 class="year">2024</h2>
-    <div class="projects">
-      <a class="project-card" href="projects/2024-unbroken-voices.html">
-        <h3>Unbroken Voices（反霸凌短訪）</h3>
-        <p>Media · Advocacy · IG / YouTube</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- 2023 -->
-  <section class="year-section is-hidden" id="y-2023" data-year="2023">
-    <h2 class="year">2023</h2>
-    <div class="projects">
-      <a class="project-card" href="projects/2023-covid-icosahedron.html">
-        <h3>COVID-19 Icosahedron Model</h3>
-        <p>STEM · Geometry · 3D Exploration</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- 2021（四年級教具展） -->
-  <section class="year-section is-hidden" id="y-2021" data-year="2021">
-    <h2 class="year">2021 · 四年級教具展</h2>
-    <div class="projects">
-      <a class="project-card" href="projects/2021-teaching-aid.html">
-        <h3>National Teaching Aids — Merit Award（最年輕得獎）</h3>
-        <p>Teaching Aids · Independent Project</p>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Luciana Lu · Built on GitHub Pages
-  </footer>
-
-  <script src="assets/main.js"></script>
-</body>
-</html>
-
-.projects-section {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.project-card {
-  display: block;
-  background: #f9f9f9;
-  border-radius: 14px;
-  padding: 24px;
-  margin-bottom: 20px;
-  text-decoration: none;
-  color: #111;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.project-card:hover {
-  background: #ffffff;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
-}
-
-.project-card h3 {
-  font-size: 20px;
-  margin-bottom: 6px;
-}
-
-.project-card p {
-  color: #555;
   font-size: 15px;
 }
-
-h1 {
-  font-size: 68px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  color: #111;
-  margin-top: 120px;
-  max-width: 900px;
+.nav-cta{
+  display:flex; gap: 10px;
 }
 
-h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #111;
-  margin-top: 30px;
+/* ---- Buttons ---- */
+.btn-dark, .btn-light{
+  display:inline-block;
+  font-size: 16px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  transition: .25s ease;
+  border:2px solid transparent;
+}
+.btn-dark{
+  background: var(--accent);
+  color: #fff;
+}
+.btn-dark:hover{
+  background:#333;
+}
+.btn-light{
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-light:hover{
+  background: var(--accent);
+  color: #fff;
+}
+
+/* =========================================================
+   HERO (首頁主視覺)
+   ========================================================= */
+.hero{
+  background: var(--panel);
+  padding: 160px 0 140px;
+}
+.hero .container{
+  max-width: 1100px;
+}
+.hero h1{
+  /* 大膽、品牌感。若想走更精品風，可將 font-family 換成 Playfair */
+  font-family: "Inter","Helvetica Neue",Arial,sans-serif;
+  font-size: 58px;           /* 視覺過密時，改 54 或 50 */
+  font-weight: 800;
+  line-height: 1.3;          /* 讓字「有呼吸」 */
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0 0 28px;
+  max-width: 900px;          /* 限制寬度，避免換行太擠 */
+}
+.hero .subtext{
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 680px;
+  line-height: 1.7;
+  margin: 0 0 40px;
+}
+.hero-buttons{
+  display:flex; gap: 14px;
+}
+
+/* =========================================================
+   PROJECTS (年份分頁)
+   路徑: /projects.html
+   ========================================================= */
+.projects-hero{
+  padding: 84px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+.projects-hero .title{
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+.projects-hero .desc{
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.filter-bar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px 0 10px;
+  flex-wrap: wrap;
+}
+.filter-tags{
+  display:flex; gap: 8px; flex-wrap: wrap;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 12px;
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor:pointer;
+  user-select: none;
+}
+.tag.active, .tag:hover{
+  background: var(--text);
+  color: #fff;
+}
+
+/* 年份區塊 */
+.year-group{
+  padding: 40px 0 12px;
+  border-bottom: 1px solid var(--line);
+}
+.year-group:last-child{ border-bottom: 0; }
+.year{
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+
+/* 專案清單（文字導向，簡潔、可掃描） */
+.project-list{
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.project-item{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--line);
+}
+.project-item:first-child{ border-top: none; }
+.project-item a{
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.badge{
+  font-size: 12px;
+  color: var(--soft);
+}
+
+/* 若要做卡片式（之後可用） */
+/*
+.project-grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius: 14px;
+  overflow:hidden;
+  background:#fff;
+}
+.card .body{ padding:16px; }
+.card h3{ margin:0 0 6px; font-size:18px; }
+.card p{ color:var(--muted); margin:0; }
+*/
+
+/* =========================================================
+   STORY (My Story / About)
+   ========================================================= */
+.section-about{
+  padding: 96px 0;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-photo{
+  border-radius: 16px;
+  overflow: hidden;
+}
+.about-copy h2{
+  font-size: 36px; font-weight: 800; margin: 0 0 12px;
+}
+.about-copy p{ color: var(--muted); }
+
+/* bullets */
+.bullets{
+  list-style: none;
+  padding: 0; margin: 18px 0 0;
+}
+.bullets li{
+  position: relative;
+  padding-left: 18px;
+  margin: 8px 0;
+}
+.bullets li::before{
+  content:"•";
+  position:absolute; left:0; top:0;
+  color: var(--text);
+}
+
+/* =========================================================
+   MEDIA（連結集合頁）
+   ========================================================= */
+.link-list{
+  list-style:none; padding:0; margin: 8px 0 0;
+}
+.link-list li{
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.link-list li:last-child{ border-bottom: 0; }
+
+/* =========================================================
+   CONTACT / FOOTER
+   ========================================================= */
+.contact{
+  padding: 100px 0 80px;
+  text-align: left;
+  border-top: 1px solid var(--line);
+}
+.contact h2{
+  font-size: 30px; font-weight: 800; margin: 0 0 8px;
+}
+.contact p{ color: var(--muted); margin-bottom: 24px; }
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  color: var(--soft);
+  font-size: 14px;
+}
+.footer .links{ display:flex; gap: 16px; flex-wrap: wrap; }
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+.brand{ font-weight: 800; letter-spacing: .3px; }
+.muted{ color: var(--muted); }
+.center{ text-align:center; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1080px){
+  .hero h1{ font-size: 52px; max-width: 820px; }
+  .about-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 820px){
+  .container{ padding: 0 24px; }
+  .hero{ padding: 140px 0 120px; }
+  .hero h1{ font-size: 46px; line-height: 1.35; }
+  .projects-hero .title{ font-size: 30px; }
+  .year{ font-size: 24px; }
+}
+@media (max-width: 520px){
+  nav{ height: 64px; }
+  .nav-links{ gap: 18px; }
+  .hero{ padding: 120px 0 100px; }
+  .hero h1{ font-size: 40px; letter-spacing: -0.2px; }
+  .hero .subtext{ font-size: 17px; }
+  .hero-buttons{ flex-direction: column; align-items:flex-start; }
 }
