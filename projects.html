@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Luciana Lu</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <!-- 顶部導覽 -->
+  <header class="nav">
+    <a class="logo" href="index.html">LUCIANA LU</a>
+    <nav>
+      <a href="projects.html">Projects</a>
+      <a href="story.html">Story</a>
+      <a href="media.html">Media</a>
+    </nav>
+  </header>
+
+  <!-- 年份選單（最近 → 過去） -->
+  <nav class="years-nav" aria-label="Projects by year">
+    <button class="year-btn is-active" data-year="2025">2025</button>
+    <button class="year-btn" data-year="2024">2024</button>
+    <button class="year-btn" data-year="2023">2023</button>
+    <button class="year-btn" data-year="2021">2021</button>
+  </nav>
+
+  <!-- 內容：每個年份一個區塊；卡片可持續增加 -->
+  <!-- 2025 -->
+  <section class="year-section" id="y-2025" data-year="2025">
+    <h2 class="year">2025</h2>
+    <div class="projects">
+      <a class="project-card" href="projects/2025-disaster-map.html">
+        <h3>Python × Disaster Relief Volunteer Map</h3>
+        <p>Web · Social Impact · Leaflet + JSON</p>
+      </a>
+
+      <a class="project-card" href="projects/2025-smart-bin.html">
+        <h3>Arduino Smart Bin Sensor</h3>
+        <p>Robotics · IoT · Ultrasonic + Microcontroller</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2024 -->
+  <section class="year-section is-hidden" id="y-2024" data-year="2024">
+    <h2 class="year">2024</h2>
+    <div class="projects">
+      <a class="project-card" href="projects/2024-unbroken-voices.html">
+        <h3>Unbroken Voices（反霸凌短訪）</h3>
+        <p>Media · Advocacy · IG / YouTube</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2023 -->
+  <section class="year-section is-hidden" id="y-2023" data-year="2023">
+    <h2 class="year">2023</h2>
+    <div class="projects">
+      <a class="project-card" href="projects/2023-covid-icosahedron.html">
+        <h3>COVID-19 Icosahedron Model</h3>
+        <p>STEM · Geometry · 3D Exploration</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2021（四年級教具展） -->
+  <section class="year-section is-hidden" id="y-2021" data-year="2021">
+    <h2 class="year">2021 · 四年級教具展</h2>
+    <div class="projects">
+      <a class="project-card" href="projects/2021-teaching-aid.html">
+        <h3>National Teaching Aids — Merit Award（最年輕得獎）</h3>
+        <p>Teaching Aids · Independent Project</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Luciana Lu · Built on GitHub Pages
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
 
