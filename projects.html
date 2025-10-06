@@ -2,150 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Luciana Lu</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #111;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      border-bottom: 1px solid #eee;
-    }
-    header a.logo {
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-      font-size: 20px;
-      letter-spacing: 1px;
-    }
-    nav a {
-      margin-left: 40px;
-      text-decoration: none;
-      color: #111;
-      font-weight: 500;
-    }
-    nav a:hover {
-      border-bottom: 2px solid black;
-      padding-bottom: 2px;
-    }
-    .filter-bar {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .filter-bar button {
-      background: none;
-      border: 1px solid #ccc;
-      padding: 8px 16px;
-      margin: 0 6px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 20px;
-    }
-    .filter-bar button:hover {
-      background-color: #111;
-      color: #fff;
-    }
-    .year-section {
-      width: 80%;
-      margin: 60px auto;
-    }
-    .year-section h2 {
-      border-bottom: 2px solid #000;
-      padding-bottom: 10px;
-      font-size: 22px;
-    }
-    .project-card {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .project-card:hover {
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-    .project-card h3 {
-      margin: 0;
-      font-size: 18px;
-    }
-    .project-card a {
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .project-card a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 40px;
-      font-size: 13px;
-      color: #777;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="logo">LUCIANA LU</a>
-    <nav>
-      <a href="projects.html">Projects</a>
-      <a href="story.html">Story</a>
-      <a href="media.html">Media</a>
-    </nav>
+  <!-- Nav -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">LUCIANA LU</a></h1>
+      <nav>
+        <ul>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="media.html">Media</a></li>
+          <li><a href="index.html#contact" class="btn-black">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Filter Bar -->
-  <div class="filter-bar">
-    <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('2025')">2025</button>
-    <button onclick="filterProjects('2021')">2021</button>
-  </div>
-
-  <!-- Projects by Year -->
-  <section class="year-section" data-year="2025">
-    <h2>2025</h2>
-    <div class="project-card">
-      <h3><a href="projects/2025-unbroken-voices.html">Unbroken Voices — Anti-Bullying Initiative</a></h3>
-      <p>Founded after personal experiences with bullying to create empathy-driven storytelling platforms.</p>
+  <!-- Header bar -->
+  <section class="page-intro">
+    <div class="container-narrow">
+      <h2 class="page-title">Projects</h2>
+      <p class="page-sub">STEM × Social Impact — curated by year.</p>
     </div>
   </section>
 
-  <section class="year-section" data-year="2021">
-    <h2>2021</h2>
-    <div class="project-card">
-      <h3><a href="projects/2021-teaching-aid.html">National Science Teaching Aid Competition</a></h3>
-      <p>Award-winning geometric model designed to explain virus structures through icosahedral forms.</p>
+  <!-- Year filter -->
+  <section class="filters">
+    <div class="container-narrow">
+      <div class="chip-group" id="yearFilters">
+        <button class="chip active" data-year="all">All</button>
+        <button class="chip" data-year="2025">2025</button>
+        <button class="chip" data-year="2021">2021</button>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Luciana Lu. Built with heart and curiosity.</p>
+  <!-- Projects grid -->
+  <section class="projects-grid">
+    <div class="container-narrow" id="projectsList">
+
+      <!-- 2025: Unbroken Voices -->
+      <article class="card" data-year="2025">
+        <a class="card-link" href="projects/2025-unbroken-voices.html">
+          <div class="card-body">
+            <div class="eyebrow">2025 · Media · Advocacy</div>
+            <h3 class="card-title">Unbroken Voices — Anti-Bullying Project</h3>
+            <p class="card-desc">
+              A student-led initiative to amplify stories after bullying and provide practical resources for wellbeing and action.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Campaign</span><span class="tag">Storytelling</span><span class="tag">Youth Voice</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 2025: Disaster Relief Volunteer Map (Python/Web) -->
+      <article class="card" data-year="2025">
+        <a class="card-link" href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Volunteer-Map" target="_blank" rel="noopener">
+          <div class="card-body">
+            <div class="eyebrow">2025 · Web · Social Impact</div>
+            <h3 class="card-title">Disaster Relief Volunteer Map</h3>
+            <p class="card-desc">
+              A Python + Leaflet web map that connects volunteers to real needs during earthquakes or landslides in Taiwan.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Leaflet</span><span class="tag">Civic Tech</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 2025: Smart Bin Sensor (Arduino/Robotics) -->
+      <article class="card" data-year="2025">
+        <a class="card-link" href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Robotics-Project" target="_blank" rel="noopener">
+          <div class="card-body">
+            <div class="eyebrow">2025 · Arduino · IoT</div>
+            <h3 class="card-title">Smart Bin Sensor</h3>
+            <p class="card-desc">
+              An ultrasonic sensor prototype that detects full trash bins and alerts cleaning staff to improve efficiency.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">IoT</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <!-- 2021: National Teaching-Aid Creative Competition -->
+      <article class="card" data-year="2021">
+        <a class="card-link" href="projects/2021-teaching-aid.html">
+          <div class="card-body">
+            <div class="eyebrow">2021 · STEM · Geometry</div>
+            <h3 class="card-title">National Teaching-Aid Creative Competition</h3>
+            <p class="card-desc">
+              Built a COVID-19 inspired icosahedron model to explore why viruses look spherical — youngest Merit Award recipient.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Geometry</span><span class="tag">Modeling</span><span class="tag">Science Fair</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Luciana Lu. Built on GitHub Pages.</p>
   </footer>
 
+  <!-- Tiny filter script -->
   <script>
-    function filterProjects(year) {
-      const sections = document.querySelectorAll('.year-section');
-      sections.forEach(sec => {
-        if (year === 'all' || sec.dataset.year === year) {
-          sec.style.display = 'block';
-        } else {
-          sec.style.display = 'none';
-        }
-      });
-    }
-  </script>
+    const chips = document.querySelectorAll('#yearFilters .chip');
+    const cards = document.querySelectorAll('.projects-grid .card');
 
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const y = chip.dataset.year;
+        cards.forEach(card => {
+          card.style.display = (y === 'all' || card.dataset.year === y) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+
 
