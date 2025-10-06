@@ -46,3 +46,19 @@ yearBtns.forEach(btn=>{
     if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
   });
 });
+
+// Year tabs on projects.html
+const navBtns = document.querySelectorAll('.year-btn');
+const yearBlocks = document.querySelectorAll('.year-section');
+
+navBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const y = btn.dataset.year;
+    navBtns.forEach(b=>b.classList.toggle('is-active', b===btn));
+    yearBlocks.forEach(sec=>{
+      sec.classList.toggle('is-hidden', sec.dataset.year !== y);
+    });
+    const target = document.getElementById(`y-${y}`);
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
