@@ -263,3 +263,38 @@ footer a:hover {
   <script src="assets/main.js"></script>
 </body>
 </html>
+
+.projects-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.project-card {
+  display: block;
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  color: #555;
+  font-size: 15px;
+}
