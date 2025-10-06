@@ -202,3 +202,57 @@ nav ul li a:hover {
 
 /* Highlight current nav item */
 nav ul li a.active { color: #666; }
+
+/* Project Photo Gallery */
+.project-gallery {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery-img {
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+.highlight-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.highlight-photo {
+  flex: 1 1 45%;
+}
+
+.highlight-text {
+  flex: 1 1 45%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.highlight-text h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.highlight-text a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 500;
+}
