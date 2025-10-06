@@ -289,3 +289,12 @@ nav ul li a.active { color: #666; }
   .about-grid { grid-template-columns: 1fr; gap: 24px; }
   .about-copy h2 { font-size: 32px; }
 }
+
+.profile-photo {
+  width: 300px;       /* 照片寬度可調整，建議 250–400px */
+  height: auto;
+  border-radius: 20px; /* 圓角 */
+  display: block;
+  margin: 40px auto;   /* 讓照片置中 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
