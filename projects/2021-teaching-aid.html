@@ -5,8 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>National Teaching-Aid Creative Competition (2021) | Luciana Lu</title>
   <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .teaching-aid-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      color: #222;
+      line-height: 1.7;
+      padding: 0 24px;
+    }
+
+    /* 上半部：左頒獎照、右文字 */
+    .award-row {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+    .award-image img {
+      width: 420px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+    .award-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 560px;
+    }
+    .award-text h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* 下半部：三張圖片橫排 + 各自的英文括號註解 */
+    .image-row {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .image-row figure {
+      width: 30%;
+      min-width: 250px;
+      text-align: center;
+    }
+    .image-row img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .image-row figcaption {
+      font-size: 0.92rem;
+      color: #444;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* 手機版自動直式 */
+    @media (max-width: 900px) {
+      .award-row { flex-direction: column; }
+      .award-image img { width: 100%; }
+      .image-row figure { width: 45%; }
+    }
+    @media (max-width: 600px) {
+      .image-row figure { width: 100%; }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- 導覽列 -->
   <header class="navbar">
     <div class="container">
       <h1 class="logo"><a href="../index.html">LUCIANA LU</a></h1>
@@ -21,71 +93,29 @@
     </div>
   </header>
 
-  <section class="page-intro">
-    <div class="container-narrow">
-      <h2 class="page-title">National Teaching-Aid Creative Competition</h2>
-      <p class="page-sub">2021 · STEM · Geometry · Merit Award</p>
-    </div>
-  </section>
+  <!-- 主內容 -->
+  <main>
+    <section class="teaching-aid-section">
+      <!-- 上半部：左頒獎照、右文字 -->
+      <div class="award-row">
+        <div class="award-image">
+          <img
+            src="../assets/110年全國第四屆科學教具創意設計競賽[研發作品收放自如正二十面體]-佳作頒獎.jpg"
+            alt="Luciana receiving Merit Award on stage">
+        </div>
 
-  <section class="container-narrow" style="padding:24px;">
-    <p>
-      During the pandemic, I became curious about the shape of the Covid-19 virus and started studying its structure. 
-      Using recycled materials, I built a model to help people visualize and understand it better—showing how creativity can make science more engaging.
-    </p>  
-    
-    <hr class="section-divider" />
-
-<h3 class="h3">Hands-On Science: Building an Icosahedron to Understand the Invisible</h3>
-
-<p>
-  I built a 3D <strong>icosahedron</strong> model inspired by COVID-19 visuals, to explore why viruses often appear spherical. 
-  The piece was exhibited at the national teaching-aid competition and received a Merit Award as the youngest participant.
-  <strong>Merit Award</strong> as one of the youngest participants.
-</p>
-<ul style="margin-top:14px; padding-left:18px;">
-      <li>Focus: Polyhedra, minimal surface, stability</li>
-      <li>Skills: Research, modeling, public presentation</li>
-      <li>Solo entry: independent presentation and Q&amp;A</li>
-    </ul>
-
-<!-- Photo Gallery: National Teaching-Aid Creative Competition -->
-<section class="project-gallery">
-  <div class="gallery-row">
-    <img src="../assets/images/110年科技部實作闖關[收放自如正二十面體]為題_0.jpg" alt="Teaching-aid competition participation certificate" class="gallery-img">
-    <img src="../assets/images/110年全國第四屆科學教具創意設計競賽[研發作品收放自如正二十面體]-佳作.jpg" alt="Merit Award certificate" class="gallery-img">
-    <img src="../assets/images/台灣物理協會實作平台(兩項作品放在供學生參考).png" alt="Physics platform featuring Luciana’s work" class="gallery-img">
-  </div>
-
-  <!-- Final photo with text beside it -->
-  <div class="highlight-row">
-    <div class="highlight-photo">
-      <img src="../assets/images/110年全國第四屆科學教具創意設計競賽[研發作品收放自如正二十面體]-佳作頒獎.jpg" alt="Luciana receiving Merit Award on stage" class="highlight-img">
-    </div>
-    <div class="highlight-text">
-      <h3>National Teaching-Aid Creative Competition (2021)</h3>
-      <p>
-        Presented my project <strong>“收放自如正二十面體”</strong> at the national competition
-        and received a <strong>Merit Award</strong> for creativity and scientific explanation.
-      </p>
-      <p>
-        🔗 <a href="https://phys-experiment.tw" target="_blank">See it featured on the Taiwan Physics Practice Platform</a>
-      </p>
-    </div>
-  </div>
-</section>
-    
-<!-- 官方證明／新聞連結：把 URL 換成真實連結 -->
-<div class="btn-row" style="margin-top:18px;">
-  <a class="btn-outline" href="https://www.nstm.gov.tw/Resources/DigitalLR/DLReBook/DLREB05.htm" target="_blank" rel="noopener">Competition Website</a>
-</div>
-
-
-    <div style="margin-top:22px;">
-      <a class="btn-outline" href="../projects.html">Back to Projects</a>
-    </div>
-  </section>
-
-  <footer class="footer"><p>© 2025 Luciana Lu.</p></footer>
-</body>
-</html>
+        <div class="award-text">
+          <h3>National Teaching-Aid Creative Competition (2021)</h3>
+          <p>
+            During the pandemic, I became curious about the shape of the COVID-19 virus and started studying its geometry.
+            Using recycled materials, I built a <strong>3D icosahedron model</strong> to explore why viruses often appear spherical.
+            The project was showcased at the National Teaching-Aid Creative Design Competition, where I received a
+            <strong>Merit Award</strong> as one of the youngest participants.
+          </p>
+          <ul>
+            <li><strong>Focus:</strong> Polyhedra, minimal surface, stability</li>
+            <li><strong>Skills:</strong> Research, modeling, public presentation</li>
+            <li><strong>Solo entry:</strong> Independent presentation and Q&amp;A</li>
+          </ul>
+          <p style="margin-top:12px;">
+            🔗 <a href="https://p3.tp.edu.tw/" target="_blank">Featured on the Taiwan_
