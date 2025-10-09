@@ -1,51 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me | Luciana Lu</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <style>
-    .about-section {
-      max-width: 900px;
-      margin: 60px auto;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-
-    .about-section img {
-      width: 300px;
-      height: auto;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 260px;
-    }
-
-    .about-text h2 {
-      font-size: 2em;
-      margin-bottom: 12px;
-    }
-
-    .about-text p {
-      font-size: 1.05em;
-      line-height: 1.6em;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
+  <!-- Top Nav -->
   <header class="navbar">
     <div class="container">
-      <h1 class="logo"><a href="index.html">LUCIANA LU</a></h1>
+      <h1 class="logo"><a href="index.html">Luciana Lu</a></h1>
       <nav>
         <ul>
           <li><a href="projects.html">Projects</a></li>
@@ -57,13 +22,42 @@
     </div>
   </header>
 
-  <section class="about-section">
-   <img src="assets/luciana.jpg" alt="Luciana Lu photo" class="profile-photo">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>Hi, I’m <strong>Luciana Lu</strong> — a student from Taiwan and the U.S. passionate about science, design, and creativity. 
-      I love building projects that combine technology and empathy, from robotics and sustainability to anti-bullying campaigns.</p>
-      <p>My goal is to use design and innovation to solve real-world problems and inspire others to explore STEM with heart and imagination.</p>
+  <!-- Page intro (optional small header) -->
+  <section class="page-intro">
+    <div class="container-narrow">
+      <h2 class="page-title">About Me</h2>
+      <p class="page-sub">STEM × Social Impact — Technology with heart.</p>
+    </div>
+  </section>
+
+  <!-- About content -->
+  <section class="section about">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <!-- Your portrait lives at /assets/luciana.jpg -->
+        <img src="assets/luciana.jpg" alt="Luciana Lu portrait" />
+      </div>
+
+      <div class="about-copy">
+        <h2>About Me</h2>
+        <p>
+          I’m Luciana Lu, a Taiwan student who learns fast, passionate about technology,
+          design, and empathy — building tools that make a difference. I use science,
+          code, and design to solve human problems — from disaster-relief tools to
+          anti-bullying storytelling. I believe that students can make a difference.
+        </p>
+
+        <ul class="bullets">
+          <li>Focus: Python · Robotics · Human-centered problem solving</li>
+          <li>Interests: Sustainability · Design for impact · Smart systems</li>
+          <li>Approach: Research-driven · Creative · Future-oriented</li>
+        </ul>
+
+        <div class="btn-row" style="margin-top:16px;">
+          <a class="btn-black" href="projects.html">See Projects</a>
+          <a class="btn-outline" href="index.html#contact">Get in touch</a>
+        </div>
+      </div>
     </div>
   </section>
 
