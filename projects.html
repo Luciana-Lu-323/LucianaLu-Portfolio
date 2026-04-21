@@ -2,139 +2,526 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Luciana Lu</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="description" content="Projects by Luciana Lu — STEM, civic tech, and social impact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F8F6F1;
+      --ink: #1A1A18;
+      --muted: #6B6B67;
+      --accent: #2E6B4F;
+      --accent-light: #EAF3DE;
+      --border: rgba(26,26,24,0.12);
+      --serif: 'DM Serif Display', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--cream);
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .page-header h1 em { font-style: italic; color: var(--accent); }
+    .page-header p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      padding: 1.2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      position: sticky;
+      top: 61px;
+      background: var(--cream);
+      z-index: 90;
+    }
+    .filter-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+    .filter-btn {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2rem;
+      border: 0.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .filter-btn.active {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    /* PROJECT GRID */
+    .projects-container {
+      padding: 3rem 2.5rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* PROJECT CARD */
+    .project-card {
+      background: var(--cream);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: pointer;
+      transition: background 0.18s;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .project-card:hover { background: rgba(46,107,79,0.04); }
+    .project-card.hidden { display: none; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .card-year {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card-arrow {
+      font-size: 18px;
+      color: var(--muted);
+      transition: transform 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .project-card:hover .card-arrow { transform: translate(3px,-3px); color: var(--accent); }
+
+    .card-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* FEATURED CARD (Ordinary Heroes) */
+    .project-card.featured {
+      grid-column: span 2;
+      background: var(--accent-light);
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
+      padding: 0;
+    }
+    .featured-left {
+      flex: 1;
+      padding: 2rem 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .featured-right {
+      width: 220px;
+      flex-shrink: 0;
+      background: rgba(46,107,79,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      gap: 1rem;
+      border-left: 0.5px solid rgba(46,107,79,0.15);
+    }
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(46,107,79,0.12);
+      padding: 4px 10px;
+      border-radius: 2rem;
+      margin-bottom: 0.2rem;
+      width: fit-content;
+    }
+    .featured-badge::before { content: '★'; font-size: 10px; }
+    .featured-stat {
+      text-align: center;
+    }
+    .featured-stat-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .featured-stat-label {
+      font-size: 11px;
+      color: var(--accent);
+      opacity: 0.7;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .featured-divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(46,107,79,0.25);
+    }
+    .visit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 8px 16px;
+      border-radius: 2rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.18s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+    .visit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .card-tag {
+      font-size: 10px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2rem;
+      background: rgba(26,26,24,0.06);
+      color: var(--muted);
+    }
+    .project-card.featured .card-tag {
+      background: rgba(46,107,79,0.12);
+      color: var(--accent);
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--muted);
+      font-size: 14px;
+      grid-column: 1/-1;
+    }
+
+    /* COUNT */
+    .projects-count {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 0 0 1.5rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      .page-header { padding: 2.5rem 1.5rem 2rem; }
+      .filter-bar { padding: 1rem 1.5rem; top: 57px; }
+      .projects-container { padding: 1.5rem; }
+      .project-card.featured { grid-column: span 1; flex-direction: column; }
+      .featured-right { width: 100%; flex-direction: row; border-left: none; border-top: 0.5px solid rgba(46,107,79,0.15); }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Nav -->
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo"><a href="index.html">LUCIANA LU</a></h1>
-      <nav>
-        <ul>
-          <li><a class="active" href="projects.html">Projects</a></li>
-          <li><a href="story.html">Story</a></li>
-          <li><a href="media.html">Media</a></li>
-          <li><a href="index.html#contact" class="btn-black">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Header bar -->
-  <section class="page-intro">
-    <div class="container-narrow">
-      <h2 class="page-title">Projects</h2>
-      <p class="page-sub">STEM × Social Impact — curated by year.</p>
-    </div>
-  </section>
+<nav>
+  <a class="nav-logo" href="index.html">Luciana Lu</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Year filter -->
-  <section class="filters">
-    <div class="container-narrow">
-      <div class="chip-group" id="yearFilters">
-        <button class="chip active" data-year="all">All</button>
-        <button class="chip" data-year="2025">2025</button>
-        <button class="chip" data-year="2021">2021</button>
+<div class="page-header">
+  <h1>Projects &<br><em>experiments</em></h1>
+  <p>STEM × Social Impact — things I've built, researched, and shipped from Taiwan.</p>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="2025">2025</button>
+  <button class="filter-btn" data-filter="2021">2021</button>
+  <button class="filter-btn" data-filter="civic">Civic Tech</button>
+  <button class="filter-btn" data-filter="arduino">Arduino</button>
+  <button class="filter-btn" data-filter="advocacy">Advocacy</button>
+  <button class="filter-btn" data-filter="web">Web</button>
+</div>
+
+<!-- PROJECTS -->
+<div class="projects-container">
+  <div class="projects-count" id="count">5 projects</div>
+  <div class="projects-grid fade-in" id="grid">
+
+    <!-- ORDINARY HEROES — FEATURED -->
+    <a class="project-card featured"
+       href="https://lunasci323.wixsite.com/ordinaryheroes"
+       target="_blank"
+       data-tags="2025 advocacy web civic">
+      <div class="featured-left">
+        <div>
+          <div class="featured-badge">網界博覽會 · Featured</div>
+          <div class="card-year" style="margin-top:0.8rem;">2025 · CyberFair</div>
+        </div>
+        <div class="card-title">Ordinary Heroes<br>of Taiwan</div>
+        <div class="card-desc">
+          A CyberFair project documenting the quiet heroism of Taiwan's everyday citizens — environmental volunteers, recyclers, and community responders. Includes a Taiwanese-language audio guide so our elders can hear their own stories told back to them.
+        </div>
+        <div class="card-tags">
+          <span class="card-tag">Civic Tech</span>
+          <span class="card-tag">Storytelling</span>
+          <span class="card-tag">Advocacy</span>
+          <span class="card-tag">Web</span>
+          <span class="card-tag">SDGs</span>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Projects grid -->
-  <section class="projects-grid">
-    <div class="container-narrow" id="projectsList">
-
-      <!-- 2025: Unbroken Voices -->
-      <article class="card" data-year="2025">
-        <a class="card-link" href="projects/2025-unbroken-voices.html">
-          <div class="card-body">
-            <div class="eyebrow">2025 · Media · Advocacy</div>
-            <h3 class="card-title">Unbroken Voices — Anti-Bullying Project</h3>
-            <p class="card-desc">
-              A student-led initiative to amplify stories after bullying and provide practical resources for wellbeing and action.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Campaign</span><span class="tag">Storytelling</span><span class="tag">Youth Voice</span>
-            </div>
-          </div>
+      <div class="featured-right">
+        <div class="featured-stat">
+          <div class="featured-stat-num">6</div>
+          <div class="featured-stat-label">Sections</div>
+        </div>
+        <div class="featured-divider"></div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">📣</div>
+          <div class="featured-stat-label">台語 Audio Guide</div>
+        </div>
+        <div class="featured-divider"></div>
+        <div class="featured-stat">
+          <div class="featured-stat-num">🌍</div>
+          <div class="featured-stat-label">Global Participant</div>
+        </div>
+        <a class="visit-btn" href="https://lunasci323.wixsite.com/ordinaryheroes" target="_blank" onclick="event.stopPropagation()">
+          Visit Site →
         </a>
-      </article>
+      </div>
+    </a>
 
-      <!-- 2025: Disaster Relief Volunteer Map (Python/Web) -->
-      <article class="card" data-year="2025">
-        <a class="card-link" href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Volunteer-Map" target="_blank" rel="noopener">
-          <div class="card-body">
-            <div class="eyebrow">2025 · Web · Social Impact</div>
-            <h3 class="card-title">Disaster Relief Volunteer Map</h3>
-            <p class="card-desc">
-              A Python + Leaflet web map that connects volunteers to real needs during earthquakes or landslides in Taiwan.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Python</span><span class="tag">Leaflet</span><span class="tag">Civic Tech</span>
-            </div>
-          </div>
-        </a>
-      </article>
+    <!-- UNBROKEN VOICES -->
+    <a class="project-card"
+       href="projects/2025-unbroken-voices.html"
+       data-tags="2025 advocacy">
+      <div class="card-top">
+        <div class="card-year">2025 · Advocacy</div>
+        <span class="card-arrow">↗</span>
+      </div>
+      <div class="card-title">Unbroken Voices</div>
+      <div class="card-desc">Student-led anti-bullying initiative amplifying stories and providing practical resources for wellbeing and action.</div>
+      <div class="card-tags">
+        <span class="card-tag">Campaign</span>
+        <span class="card-tag">Storytelling</span>
+        <span class="card-tag">Youth Voice</span>
+      </div>
+    </a>
 
-      <!-- 2025: Smart Bin Sensor (Arduino/Robotics) -->
-      <article class="card" data-year="2025">
-        <a class="card-link" href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Robotics-Project" target="_blank" rel="noopener">
-          <div class="card-body">
-            <div class="eyebrow">2025 · Arduino · IoT</div>
-            <h3 class="card-title">Smart Bin Sensor</h3>
-            <p class="card-desc">
-              An ultrasonic sensor prototype that detects full trash bins and alerts cleaning staff to improve efficiency.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">IoT</span>
-            </div>
-          </div>
-        </a>
-      </article>
+    <!-- VOLUNTEER MAP -->
+    <a class="project-card"
+       href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Volunteer-Map"
+       target="_blank"
+       data-tags="2025 civic web">
+      <div class="card-top">
+        <div class="card-year">2025 · Civic Tech</div>
+        <span class="card-arrow">↗</span>
+      </div>
+      <div class="card-title">Disaster Relief Volunteer Map</div>
+      <div class="card-desc">Python + Leaflet web map connecting volunteers to real needs during earthquakes and landslides in Taiwan.</div>
+      <div class="card-tags">
+        <span class="card-tag">Python</span>
+        <span class="card-tag">Leaflet</span>
+        <span class="card-tag">Civic Tech</span>
+      </div>
+    </a>
 
-      <!-- 2021: National Teaching-Aid Creative Competition -->
-      <article class="card" data-year="2021">
-        <a class="card-link" href="projects/2021-teaching-aid.html">
-          <div class="card-body">
-            <div class="eyebrow">2021 · STEM · Geometry</div>
-            <h3 class="card-title">National Teaching-Aid Creative Competition</h3>
-            <p class="card-desc">
-              Built a COVID-19 inspired icosahedron model to explore why viruses look spherical — youngest Merit Award recipient.
-            </p>
-            <div class="tag-row">
-              <span class="tag">Geometry</span><span class="tag">Modeling</span><span class="tag">Science Fair</span>
-            </div>
-          </div>
-        </a>
-      </article>
+    <!-- SMART BIN -->
+    <a class="project-card"
+       href="https://github.com/Luciana-Lu-323/Luna-Portfolio/tree/main/Robotics-Project"
+       target="_blank"
+       data-tags="2025 arduino">
+      <div class="card-top">
+        <div class="card-year">2025 · IoT</div>
+        <span class="card-arrow">↗</span>
+      </div>
+      <div class="card-title">Smart Bin Sensor</div>
+      <div class="card-desc">Ultrasonic sensor prototype that detects full trash bins and alerts cleaning staff to improve urban efficiency.</div>
+      <div class="card-tags">
+        <span class="card-tag">Arduino</span>
+        <span class="card-tag">Sensors</span>
+        <span class="card-tag">IoT</span>
+      </div>
+    </a>
 
-    </div>
-  </section>
+    <!-- TEACHING AID -->
+    <a class="project-card"
+       href="projects/2021-teaching-aid.html"
+       data-tags="2021">
+      <div class="card-top">
+        <div class="card-year">2021 · Science Fair</div>
+        <span class="card-arrow">↗</span>
+      </div>
+      <div class="card-title">National Teaching-Aid Competition</div>
+      <div class="card-desc">COVID-19 inspired icosahedron model exploring why viruses look spherical — youngest Merit Award recipient.</div>
+      <div class="card-tags">
+        <span class="card-tag">Geometry</span>
+        <span class="card-tag">Modeling</span>
+        <span class="card-tag">🏆 Merit Award</span>
+      </div>
+    </a>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Luciana Lu. Built on GitHub Pages.</p>
-  </footer>
+    <div class="empty-state" id="empty">No projects match this filter.</div>
+  </div>
+</div>
 
-  <!-- Tiny filter script -->
-  <script>
-    const chips = document.querySelectorAll('#yearFilters .chip');
-    const cards = document.querySelectorAll('.projects-grid .card');
+<footer>
+  <span>© 2025 Luciana Lu</span>
+  <a href="index.html" style="color:var(--muted);text-decoration:none;">← Back home</a>
+</footer>
 
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
+<script>
+  // Fade in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        const y = chip.dataset.year;
-        cards.forEach(card => {
-          card.style.display = (y === 'all' || card.dataset.year === y) ? '' : 'none';
-        });
+  // Filter
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const count = document.getElementById('count');
+  const empty = document.getElementById('empty');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const show = f === 'all' || tags.includes(f);
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
       });
+      count.textContent = visible + (visible === 1 ? ' project' : ' projects');
+      empty.style.display = visible === 0 ? 'block' : 'none';
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
-
-
