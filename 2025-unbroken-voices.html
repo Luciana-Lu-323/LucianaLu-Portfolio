@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unbroken Voices — Anti-Bullying | Luciana Lu</title>
+  <meta name="description" content="Unbroken Voices — a student-led anti-bullying initiative by Luciana Lu to amplify stories and push for systemic change." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F8F6F1;
+      --ink: #1A1A18;
+      --muted: #6B6B67;
+      --accent: #2E6B4F;
+      --accent-light: #EAF3DE;
+      --rose: #C45C5C;
+      --rose-light: #FAF0F0;
+      --border: rgba(26,26,24,0.12);
+      --serif: 'DM Serif Display', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); font-size: 15px; line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 2.5rem; border-bottom: 0.5px solid var(--border);
+      position: sticky; top: 0; background: var(--cream); z-index: 100;
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 70vh; border-bottom: 0.5px solid var(--border);
+    }
+    .hero-left {
+      padding: 4rem 3rem 4rem 2.5rem;
+      border-right: 0.5px solid var(--border);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .hero-meta { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .hero-title {
+      font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: var(--rose); }
+    .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 480px; }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--ink); color: var(--cream);
+      padding: 0.65rem 1.3rem; border-radius: 2rem;
+      font-size: 13px; font-weight: 500; text-decoration: none;
+      font-family: var(--sans); transition: background 0.2s, transform 0.15s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--rose); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 0.5px solid var(--border); color: var(--muted);
+      padding: 0.65rem 1.3rem; border-radius: 2rem;
+      font-size: 13px; text-decoration: none; font-family: var(--sans);
+      transition: border-color 0.2s, color 0.2s; background: transparent;
+    }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+    .hero-right {
+      padding: 4rem 2.5rem 4rem 3rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
+    }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; border: 0.5px solid var(--border); }
+    .stat-box { background: var(--cream); padding: 1.4rem; }
+    .stat-num { font-family: var(--serif); font-size: 2.2rem; color: var(--rose); font-weight: 400; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 13px; border-radius: 2rem; border: 0.5px solid var(--border); color: var(--muted); }
+    .tag.rose { background: var(--rose-light); color: var(--rose); border-color: transparent; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border); }
+    .section-label {
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 2.5rem;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+
+    /* STORY */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .story-text h2 { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; line-height: 1.25; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+    .story-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; font-size: 14px; }
+    .quote-block {
+      border-left: 2px solid var(--rose);
+      padding: 1.2rem 1.5rem;
+      background: var(--rose-light);
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .quote-block p { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--rose); line-height: 1.5; margin: 0; }
+
+    /* TIMELINE */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); }
+    .timeline-date { font-size: 12px; color: var(--muted); padding-top: 3px; letter-spacing: 0.04em; }
+    .timeline-content h4 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .timeline-content p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* FORMAT CARDS */
+    .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .format-card { background: var(--cream); padding: 1.5rem; }
+    .format-icon { font-size: 22px; margin-bottom: 0.8rem; }
+    .format-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .format-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* MISSION */
+    .mission-box {
+      background: var(--rose-light); border: 0.5px solid rgba(196,92,92,0.15);
+      border-radius: 8px; padding: 2.5rem; text-align: center;
+    }
+    .mission-box h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .mission-box p { color: var(--muted); font-size: 14px; max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.8; }
+    .mission-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { padding: 2rem 2.5rem; display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+
+    /* FADE */
+    .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { gap: 1rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { display: none; }
+      .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .format-grid { grid-template-columns: 1fr 1fr; }
+      .section { padding: 3rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Luciana Lu</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="breadcrumb">
+        <a href="../projects.html">Projects</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Unbroken Voices</span>
+      </div>
+      <div class="hero-meta">2025 · Advocacy · Youth Voice</div>
+      <div class="hero-title">
+        <em>Unbroken</em><br>Voices
+      </div>
+      <div class="hero-desc">
+        A student-led anti-bullying initiative to amplify stories, build community, and push for the systemic change every child deserves.
+      </div>
+    </div>
+    <div class="hero-actions" style="margin-top:2rem;">
+      <a class="btn-primary" href="https://www.instagram.com/unbroken._.voices/" target="_blank">Instagram ↗</a>
+      <a class="btn-ghost" href="https://www.youtube.com/@unbrokenvoices525" target="_blank">YouTube ↗</a>
+      <a class="btn-ghost" href="../projects.html">← All Projects</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">2025</div>
+        <div class="stat-label">Year launched</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Content formats</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Stories to tell</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Goal: reform</div>
+      </div>
+    </div>
+    <div class="tag-cloud">
+      <span class="tag rose">Anti-Bullying</span>
+      <span class="tag rose">Youth Voice</span>
+      <span class="tag">Instagram</span>
+      <span class="tag">YouTube</span>
+      <span class="tag">Storytelling</span>
+      <span class="tag">Mental Health</span>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="section-label">The story behind it</div>
+  <div class="story-grid fade-in">
+    <div class="story-text">
+      <h2>When the system couldn't protect me, I chose another way.</h2>
+      <p>I started Unbroken Voices because my mom and I truly tried everything. I applied for a school investigation, gathered evidence, and wrote letters to the Education Director, the Mayor, and even the President — hoping someone would help.</p>
+      <p>We sought help from legal teams, city councilors, and legislators. But we realized that even then, the system couldn't truly protect students. My doctor said I didn't need medication, my counselor said I was mature, my teacher said the problem wasn't me — but nothing changed.</p>
+      <div class="quote-block">
+        <p>"The one who truly caught me when I was falling was my psychiatrist, Dr. Chung Yi-Hang — he was a light in the dark."</p>
+      </div>
+      <p>In the end, I withdrew the investigation, knowing that path had reached its limit. So I chose another way to make a change.</p>
+    </div>
+    <div class="story-text">
+      <h2>Not to blame — but to build something better.</h2>
+      <p>I created this project not to blame anyone, but to show that even when children, parents, and teachers try their best, we still need a better system — one that allows every child to learn in safety, respect, and joy.</p>
+      <p>Unbroken Voices amplifies student stories, connects young people with real resources, and advocates for legislative reform that creates lasting protection for every learner in Taiwan.</p>
+      <div class="quote-block">
+        <p>"Education is the foundation of a nation."</p>
+      </div>
+      <p>The project includes interviews, short-form videos, and a resource kit co-designed with school counselors and peers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="section">
+  <div class="section-label">How we show up</div>
+  <div class="format-grid fade-in">
+    <div class="format-card">
+      <div class="format-icon">📸</div>
+      <div class="format-name">Instagram Reels</div>
+      <div class="format-desc">Short-form video stories and resources shared with a growing community of students and advocates.</div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">🎙</div>
+      <div class="format-name">Podcast / YouTube</div>
+      <div class="format-desc">Long-form interviews and conversations with students, counselors, and mental health professionals.</div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">📖</div>
+      <div class="format-name">Resource Kit</div>
+      <div class="format-desc">Practical wellbeing and action guide co-designed with school counselors and peers.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section">
+  <div class="section-label">Roadmap</div>
+  <div class="timeline fade-in">
+    <div class="timeline-item">
+      <div class="timeline-date">2025 — Now</div>
+      <div class="timeline-content">
+        <h4>Launch & community building</h4>
+        <p>Instagram and YouTube channels live. Publishing student stories, reels, and mental health resources.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Next step</div>
+      <div class="timeline-content">
+        <h4>Partner with counselors & professionals</h4>
+        <p>Collaborating with school counselors and mental health professionals to co-create evidence-based resources.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Goal</div>
+      <div class="timeline-content">
+        <h4>Legislative reform</h4>
+        <p>Advocating for systemic change — so every child in Taiwan can learn in safety, respect, and joy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION CTA -->
+<section class="section">
+  <div class="mission-box fade-in">
+    <h2>Every voice matters.<br>Especially the <em style="font-style:italic; color:var(--rose);">unbroken</em> ones.</h2>
+    <p>If you've ever felt unheard, or if you want to help build a safer school culture in Taiwan — follow along, share a story, or reach out.</p>
+    <div class="mission-actions">
+      <a class="btn-primary" href="https://www.instagram.com/unbroken._.voices/" target="_blank">Follow on Instagram ↗</a>
+      <a class="btn-ghost" href="https://www.youtube.com/@unbrokenvoices525" target="_blank">Watch on YouTube ↗</a>
+      <a class="btn-ghost" href="../index.html#contact">Contact Luciana</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Luciana Lu</span>
+  <a href="../projects.html" style="color:var(--muted); text-decoration:none;">← Back to Projects</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
